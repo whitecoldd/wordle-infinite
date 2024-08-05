@@ -18,10 +18,6 @@ function Letter({ row, position }) {
     colors[row].length &&
     colors[row][position] === "yellow";
 
-  useEffect(() => {
-    console.log(correct);
-  }, [correct]);
-
   const letterState =
     current.row > row &&
     (correct ? "bg-green-600" : almost ? "bg-yellow-500" : "bg-gray-700");
@@ -44,7 +40,7 @@ function Letter({ row, position }) {
 
   return (
     <div
-      className={`flex-[33%] h-full border border-solid border-grey-700 m-[5px] grid place-items-center text-[30px] font-extrabold text-white ${letterState} `}
+      className={`flex-[33%] h-full border border-solid border-white m-[5px] grid place-items-center text-[30px] font-extrabold text-white ${letterState} `}
     >
       {letter}
     </div>

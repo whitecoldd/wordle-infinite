@@ -21,7 +21,7 @@ function GameOver() {
       )}
       <button
         onClick={() => restart()}
-        className="bg-green-600 px-8 py-2 text-3xl uppercase mt-6"
+        className={`${gameOver.isWordGuessed ? "bg-green-600" : "bg-red-700"} px-8 py-2 text-3xl uppercase mt-6`}
       >
         play again!
       </button>

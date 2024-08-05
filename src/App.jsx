@@ -98,10 +98,6 @@ function App() {
     });
   }, [word]);
 
-  useEffect(() => {
-    console.log({ board, gameOver, usedLetters, current, colors });
-  }, [board, gameOver, usedLetters, current, colors]);
-
   const onTypeLetter = (value) => {
     error && setError(false);
     if (current.position > 4) return;
@@ -124,7 +120,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log(rowRef.current);
     if (error) {
       rowRef.current[current.row].classList.add("error-shake");
     } else {
@@ -150,7 +145,7 @@ function App() {
       return;
     }
 
-    if (current.row === 5) {
+    if (current.row === 5 && wordSet.has(word)) {
       setGameOver({ isGameOver: true, isWordGuessed: false });
     }
   };
